@@ -5,8 +5,8 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build --dist-dir ./build --public-url",
-    "deploy": "gh-pages -d ./build"
+    "build": "parcel build --dist-dir build --public-url /piedra-papel-tijeras",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
