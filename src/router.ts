@@ -1,5 +1,6 @@
 import { initPageWelcome } from "./pages/pageWelcome";
 import { initPageInstructions } from "./pages/pageInstructions";
+import { initPagePlay } from "./pages/pagePlay";
 
 const BASE_PATH = "/piedra-papel-tijeras";
 
@@ -15,6 +16,10 @@ const routes = [
   {
     path: /\/instructions/,
     page: initPageInstructions,
+  },
+  {
+    path: /\/play/,
+    page: initPagePlay,
   },
   {
     path: /\/end/,
