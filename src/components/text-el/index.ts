@@ -22,18 +22,20 @@ export function initTextEl() {
       style.innerHTML = `
                 
                 .h1{
-                    font-size: 80px;
-                    
+                    font-size: 80px;                    
                     color: #009048;
                     margin: 0;
                     width: 284px;    
-                    text-align: center  ;                
+                    text-align: center;                
                     word-break: keep-all;
                     font-family: 'Odibee Sans', cursive;
-                }
-                .p{
+                  }
+                  .p{
                     margin: 0;
-                    font-size: 18px;
+                    width: 284px;    
+                    text-align: center;                
+                    font-size: 40px;
+                    font-weight: 600;
                     font-family: 'Odibee Sans', cursive;
                     
                 }
