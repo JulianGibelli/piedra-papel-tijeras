@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.1.7",
     "gh-pages": "^5.0.0",
     "parcel": "^2.8.3"
   }

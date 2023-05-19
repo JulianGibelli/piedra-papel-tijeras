@@ -1,0 +1,27 @@
+.mainContainer {
+  background-image: url("../../assets/fondo.png");
+  background-size: cover;
+  
+}
+
+.subContainer {  
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 20vh;
+  align-items: center;
+}
+
+.handsCointainer {
+  min-width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+#tijera {
+  max-height: 100%;
+}
