@@ -1,6 +1,9 @@
+import { state } from "../../state";
+
 export function initPiedraEl(){
     const imagePiedraURL = require("url: ../../../src/assets/piedra.png");
     class PiedraEl extends HTMLElement{
+        identificador = 1;
         constructor(){
             super()
             this.attachShadow({ mode: "open" });
@@ -20,8 +23,15 @@ export function initPiedraEl(){
                 .img:hover{
                     opacity: 1;
                     cursor:pointer;
+                    
                 }
             `;
+
+            this.addEventListener("click",()=>{
+                console.log("id del componente:",this.identificador)
+                state.setClicked(this.identificador)
+            })
+
             this.shadowRoot?.appendChild(style)
             this.shadowRoot?.appendChild(img)
         }

@@ -1,18 +1,22 @@
 import "./styles.css";
+import { state } from "../../state";
 //la pagina recibe la funcin de goTo para que sus componentes puedan modificar la url simbolica
 //la pagina debe de devolver un unico elemento HTML que se montara en el cascaron
 
 export function initPagePlay(params) {
-  let { goTo } = params;
-  //inicio la cuenta regresiva si llega a 0 vuelvo al menu de instrucciones
+    let { goTo } = params;    
+    //inicio la cuenta regresiva si llega a 0 vuelvo al menu de instrucciones
   let valor = 4;
   const setIntervalID = setInterval(() => {
     valor--;
-
-    if (valor == 0) {
+    if (valor == 0 && state.getClicked().length == 0) {
       //llevarme el id del intervalo para matarlo en la proxima pagina
       clearInterval(setIntervalID);
-      //goTo("/instructions");
+      goTo("/instructions");
+    }
+    if(state.getClicked().length !== 0){
+        clearInterval(setIntervalID);
+        goTo("/game");
     }
   }, 1000);
 
@@ -28,6 +32,7 @@ export function initPagePlay(params) {
       </div>
     </div>    
     `;
+
 
   return pagePlay;
 }

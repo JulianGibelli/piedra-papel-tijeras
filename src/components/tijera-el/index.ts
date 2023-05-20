@@ -1,6 +1,9 @@
+import { state } from "../../state";
+
 export function initTijeraEl() {
   const imageTijeraURL = require("url: ../../../src/assets/tijera.png");
   class TijeraEl extends HTMLElement {
+    identificador=3;
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
@@ -20,8 +23,13 @@ export function initTijeraEl() {
                 .img:hover{
                     opacity: 1;
                     cursor:pointer;
+                    
                 }
             `;
+      this.addEventListener("click", () => {
+        console.log("id del componente:", this.identificador);
+        state.setClicked(this.identificador);
+      });
       this.shadowRoot?.appendChild(style);
       this.shadowRoot?.appendChild(img);
     }

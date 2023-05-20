@@ -1,6 +1,9 @@
+import { state } from "../../state";
+
 export function initPapelEl() {
   const imagePapelURL = require("url: ../../../src/assets/papel.png");
   class PapelEl extends HTMLElement {
+    identificador = 2;
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
@@ -20,8 +23,14 @@ export function initPapelEl() {
                 .img:hover{
                     opacity: 1;
                     cursor:pointer;
+                    
                 }
             `;
+
+      this.addEventListener("click", () => {
+        console.log("id del componente:", this.identificador);
+        state.setClicked(this.identificador);
+      });
       this.shadowRoot?.appendChild(style);
       this.shadowRoot?.appendChild(img);
     }
